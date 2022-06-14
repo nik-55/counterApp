@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import "./bloc/home_bloc.dart";
+import "home.dart";
 import "localstorage.dart";
 
 Future<void> main() async {
@@ -11,9 +11,8 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Counter', home: HomePage());
+    return Home();
   }
 }

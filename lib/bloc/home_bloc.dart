@@ -8,16 +8,19 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(title: const Text("Counter")),
-          body: MultiBlocProvider(
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          MultiBlocProvider(
             providers: [
               BlocProvider(create: (_) => CounterCubit()),
               BlocProvider(create: (_) => ApiCubit()),
             ],
             child: CounterPage(),
-          )),
+          ),
+        ],
+      ),
     );
   }
 }
