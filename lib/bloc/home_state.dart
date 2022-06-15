@@ -40,6 +40,15 @@ class CounterPage extends StatelessWidget {
                     style: const TextStyle(
                         fontSize: 15, fontWeight: FontWeight.bold))),
           ),
+          const SizedBox(
+            height: 40,
+          ),
+          FloatingActionButton(
+              child: const Icon(Icons.refresh),
+              onPressed: () => {
+                    context.read<CounterCubit>().reset(),
+                    context.read<ApiCubit>().reset(),
+                  }),
         ],
       ),
     );
