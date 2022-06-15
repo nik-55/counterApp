@@ -13,8 +13,13 @@ class CounterCubit extends Cubit<int> {
   }
 
   void decrement() {
-    LocalStorage.setCount((int.parse(LocalStorage.getCount()) - 1).toString());
-    emit(state - 1);
+    if (state - 1 >= 0) {
+      LocalStorage.setCount(
+          (int.parse(LocalStorage.getCount()) - 1).toString());
+      emit(state - 1);
+    } else {
+      emit(state);
+    }
   }
 
   void reset() {
@@ -31,7 +36,7 @@ class ApiCubit extends Cubit<String> {
           ('https://networkcalc.com/api/binary/' + count + '?from=10&to=2'));
       return response.data["converted"];
     } catch (e) {
-      return e.toString();
+      return "Error!! Check Your Connectivity";
     }
   }
 
