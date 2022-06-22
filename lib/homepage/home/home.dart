@@ -1,6 +1,6 @@
-import 'package:counter/homedrawer.dart';
+import './homedrawer.dart';
 import "package:flutter/material.dart";
-import './bloc/home_bloc.dart';
+import '../bloc/home_bloc.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -10,11 +10,11 @@ class Home extends StatelessWidget {
     return MaterialApp(
       title: "Counter",
       home: Scaffold(
-        drawer: Drawer(child: HomeDrawer()),
+        drawer: const Drawer(child: HomeDrawer()),
         appBar: AppBar(
-          title: Text("Counter"),
+          title: const Text("Counter"),
         ),
-        body: HomePage(),
+        body: const HomePage(),
       ),
     );
   }

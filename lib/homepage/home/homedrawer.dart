@@ -1,13 +1,15 @@
 import "package:flutter/material.dart";
 
 class HomeDrawer extends StatelessWidget {
+  const HomeDrawer({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.purple[100],
       child: Column(
-          children: [Text("Welcome This is Flutter App")],
-          mainAxisAlignment: MainAxisAlignment.center),
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [Text("Welcome This is Flutter App")]),
     );
   }
 }

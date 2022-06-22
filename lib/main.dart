@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import "home.dart";
+import "./homepage/home/home.dart";
 import "localstorage.dart";
 
 Future<void> main() async {
@@ -13,6 +13,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Home();
+    return const Home();
   }
 }

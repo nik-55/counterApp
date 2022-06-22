@@ -1,7 +1,6 @@
 import 'package:counter/localstorage.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import "../localstorage.dart";
+import "../../localstorage.dart";
 import 'package:dio/dio.dart';
 
 class CounterCubit extends Cubit<int> {
@@ -18,7 +17,7 @@ class CounterCubit extends Cubit<int> {
           (int.parse(LocalStorage.getCount()) - 1).toString());
       emit(state - 1);
     } else {
-      emit(state);
+      emit(0);
     }
   }
 
@@ -32,8 +31,8 @@ class ApiCubit extends Cubit<String> {
   static Future<String> _getHttp() async {
     try {
       var count = LocalStorage.getCount();
-      final response = await Dio().get(
-          ('https://networkcalc.com/api/binary/' + count + '?from=10&to=2'));
+      final response = await Dio()
+          .get(('https://networkcalc.com/api/binary/$count?from=10&to=2'));
       return response.data["converted"];
     } catch (e) {
       return "Error!! Check Your Connectivity";

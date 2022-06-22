@@ -35,8 +35,8 @@ class CounterPage extends StatelessWidget {
           ),
           BlocBuilder<ApiCubit, String>(
             builder: (context, binary) => Container(
-                margin: EdgeInsets.all(20),
-                child: Text('$binary',
+                margin: const EdgeInsets.all(20),
+                child: Text(binary,
                     style: const TextStyle(
                         fontSize: 15, fontWeight: FontWeight.bold))),
           ),
